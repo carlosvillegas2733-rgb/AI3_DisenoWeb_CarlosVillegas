@@ -30,7 +30,7 @@
                 message: 'Selecciona un semestre entre 1 y 8.',
             },
             telefono: {
-                validate: (value) => /^\+?\d{7,15}$/.test(value.trim()),
+                validate: (value) => /^\+?\d{7,15}$/.test(value.trim().replace(/[\s().-]/g, '')),
                 message: 'El teléfono debe tener entre 7 y 15 dígitos; puede iniciar con +.',
             },
         };
@@ -93,11 +93,6 @@
         form.querySelectorAll('input, select').forEach((field) => {
             field.addEventListener('input', () => clearClientError(field));
             field.addEventListener('change', () => clearClientError(field));
-            field.addEventListener('blur', () => {
-                if (field.value.trim() !== '') {
-                    validateField(field);
-                }
-            });
         });
 
         form.addEventListener('submit', (event) => {

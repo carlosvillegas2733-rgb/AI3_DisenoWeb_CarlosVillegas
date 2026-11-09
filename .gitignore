@@ -1,0 +1,38 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Local configuration overrides
+config.local.php
+*.local.php
+
+# Logs and caches
+*.log
+logs/
+storage/logs/
+.phpunit.result.cache
+.php-cs-fixer.cache
+
+# Dependency directories
+vendor/
+node_modules/
+
+# IDE and operating system files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local database backups
+*.sql.gz
+*.dump
+backups/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
